@@ -48,7 +48,7 @@ variable "threat_intel_mode" {
 
 variable "zones" {
   description = "Specifies the availability zones of the Azure Firewall"
-  default     = ["1", "2", "3"]
+  #default     = ["1", "2", "3"]
   type        = list(string)
 }
 
@@ -76,5 +76,5 @@ variable "log_analytics_workspace_id" {
 variable "log_analytics_retention_days" {
   description = "Specifies the number of days of the retention policy"
   type        = number
-  default     = 7
+  default     = 1
 }

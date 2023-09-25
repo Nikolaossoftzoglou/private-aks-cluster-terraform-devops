@@ -40,10 +40,10 @@ resource "azurerm_monitor_diagnostic_setting" "settings" {
 
   log {
     category = "VMProtectionAlerts"
-    enabled  = true
+    enabled  = false
 
     retention_policy {
-      enabled = true
+      enabled = false
       days    = var.log_analytics_retention_days
     }
   }
@@ -52,7 +52,7 @@ resource "azurerm_monitor_diagnostic_setting" "settings" {
     category = "AllMetrics"
 
     retention_policy {
-      enabled = true
+      enabled = false
       days    = var.log_analytics_retention_days
     }
   }

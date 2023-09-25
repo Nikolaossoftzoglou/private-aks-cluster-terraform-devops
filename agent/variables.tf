@@ -1,12 +1,12 @@
 variable "log_analytics_workspace_name" {
   description = "Specifies the name of the log analytics workspace"
-  default     = "BaboAksWorkspace"
+  default     = "AksWorkspace"
   type        = string
 }
 
 variable "log_analytics_resource_group_name" {
   description = "Specifies the name of the log analytics resource group"
-  default     = "BaboAksWorkspace"
+  default     = "AksWorkspace-rg"
   type        = string
 }
 
@@ -39,13 +39,13 @@ variable "location" {
 
 variable "resource_group_name" {
   description = "Specifies the resource group name"
-  default     = "BaboRG"
+  default     = "AKS-RG"
   type        = string
 }
 
 variable "vm_name" {
   description = "Specifies the name of the self-hosted agent virtual machine"
-  default     = "TestVm"
+  default     = "northeurope"
   type        = string
 }
 

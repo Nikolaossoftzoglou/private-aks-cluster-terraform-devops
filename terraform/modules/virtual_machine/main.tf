@@ -215,17 +215,17 @@ resource "azurerm_monitor_diagnostic_setting" "nsg_settings" {
     enabled  = true
 
     retention_policy {
-      enabled = true
+      enabled = false
       days    = var.log_analytics_retention_days
     }
   }
 
  log {
     category = "NetworkSecurityGroupRuleCounter"
-    enabled  = true
+    enabled  = false
 
     retention_policy {
-      enabled = true
+      enabled = false
       days    = var.log_analytics_retention_days
     }
   }

@@ -71,7 +71,7 @@ variable "sku_tier" {
 
 variable "kubernetes_version" {
   description = "Specifies the AKS Kubernetes version"
-  default     = "1.21.1"
+  default     = "1.27.3"
   type        = string
 }
 
@@ -83,7 +83,7 @@ variable "default_node_pool_vm_size" {
 
 variable "default_node_pool_availability_zones" {
   description = "Specifies the availability zones of the default node pool"
-  default     = ["1", "2", "3"]
+  #default     = ["1", "2", "3"]
   type        = list(string)
 }
 
@@ -137,7 +137,7 @@ variable "default_node_pool_subnet_address_prefix" {
 variable "default_node_pool_enable_auto_scaling" {
   description = "(Optional) Whether to enable auto-scaler. Defaults to false."
   type          = bool
-  default       = true
+  default       = false
 }
 
 variable "default_node_pool_enable_host_encryption" {
@@ -185,13 +185,13 @@ variable "default_node_pool_max_count" {
 variable "default_node_pool_min_count" {
   description = "(Required) The minimum number of nodes which should exist within this Node Pool. Valid values are between 0 and 1000 and must be less than or equal to max_count."
   type          = number
-  default       = 3
+  default       = 1
 }
 
 variable "default_node_pool_node_count" {
   description = "(Optional) The initial number of nodes which should exist within this Node Pool. Valid values are between 0 and 1000 and must be a value in the range min_count - max_count."
   type          = number
-  default       = 3
+  default       = 1
 }
 
 variable "log_analytics_workspace_id" {
@@ -207,7 +207,7 @@ variable "tenant_id" {
 variable "log_analytics_retention_days" {
   description = "Specifies the number of days of the retention policy"
   type        = number
-  default     = 30
+  default     = 1
 }
 
 variable "vnet_subnet_id" {
@@ -270,19 +270,19 @@ variable "ssh_public_key" {
 variable "keda_enabled" {
   description = "(Optional) Specifies whether KEDA Autoscaler can be used for workloads."
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "vertical_pod_autoscaler_enabled" {
   description = "(Optional) Specifies whether Vertical Pod Autoscaler should be enabled."
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "workload_identity_enabled" {
   description = "(Optional) Specifies whether Azure AD Workload Identity should be enabled for the Cluster. Defaults to false."
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "oidc_issuer_enabled" {
@@ -294,19 +294,19 @@ variable "oidc_issuer_enabled" {
 variable "open_service_mesh_enabled" {
   description = "(Optional) Is Open Service Mesh enabled? For more details, please visit Open Service Mesh for AKS."
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "image_cleaner_enabled" {
   description = "(Optional) Specifies whether Image Cleaner is enabled."
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "azure_policy_enabled" {
   description = "(Optional) Should the Azure Policy Add-On be enabled? For more details please visit Understand Azure Policy for Azure Kubernetes Service"
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "http_application_routing_enabled" {

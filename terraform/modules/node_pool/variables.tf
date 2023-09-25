@@ -16,7 +16,7 @@ variable "vm_size" {
 variable "availability_zones" {
   description = "(Optional) A list of Availability Zones where the Nodes in this Node Pool should be created in. Changing this forces a new resource to be created."
   type        = list(string)
-  default = ["1", "2", "3"]
+  #default = ["1", "2", "3"]
 }
 
 variable "enable_auto_scaling" {
@@ -40,7 +40,7 @@ variable "enable_node_public_ip" {
 variable "max_pods" {
   description = "(Optional) The maximum number of pods that can run on each agent. Changing this forces a new resource to be created."
   type          = number
-  default       = 250
+  default       = 110
 }
 
 variable "mode" {
@@ -123,7 +123,7 @@ variable "max_count" {
 variable "min_count" {
   description = "(Required) The minimum number of nodes which should exist within this Node Pool. Valid values are between 0 and 1000 and must be less than or equal to max_count."
   type          = number
-  default       = 3
+  default       = 1
 }
 
 variable "node_count" {
@@ -140,5 +140,5 @@ variable resource_group_name {
 variable "oidc_issuer_enabled" {
   description = " (Optional) Enable or Disable the OIDC issuer URL."
   type        = bool
-  default     = true
+  default     = false
 }

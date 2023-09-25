@@ -23,7 +23,7 @@ variable "retention_policy_enabled" {
 variable "retention_policy_days" {
   description = "(Optional) The number of days for which this Retention Policy should apply."
   type        = number
-  default     = 30
+  default     = 1
 }
 
 variable "target_resource_id" {

@@ -48,10 +48,10 @@ resource "azurerm_monitor_diagnostic_setting" "settings" {
 
   log {
     category = "BastionAuditLogs"
-    enabled  = true
+    enabled  = false
 
     retention_policy {
-      enabled = true
+      enabled = false
       days    = var.log_analytics_retention_days
     }
   }
@@ -60,7 +60,7 @@ resource "azurerm_monitor_diagnostic_setting" "settings" {
     category = "AllMetrics"
 
     retention_policy {
-      enabled = true
+      enabled = false
       days    = var.log_analytics_retention_days
     }
   }
@@ -73,30 +73,30 @@ resource "azurerm_monitor_diagnostic_setting" "pip_settings" {
 
   log {
     category = "DDoSProtectionNotifications"
-    enabled  = true
+    enabled  = false
 
     retention_policy {
-      enabled = true
+      enabled = false
       days    = var.log_analytics_retention_days
     }
   }
 
   log {
     category = "DDoSMitigationFlowLogs"
-    enabled  = true
+    enabled  = false
 
     retention_policy {
-      enabled = true
+      enabled = false
       days    = var.log_analytics_retention_days
     }
   }
 
   log {
     category = "DDoSMitigationReports"
-    enabled  = true
+    enabled  = false
 
     retention_policy {
-      enabled = true
+      enabled = false
       days    = var.log_analytics_retention_days
     }
   }
@@ -105,7 +105,7 @@ resource "azurerm_monitor_diagnostic_setting" "pip_settings" {
     category = "AllMetrics"
 
     retention_policy {
-      enabled = true
+      enabled = false
       days    = var.log_analytics_retention_days
     }
   }
